@@ -1,5 +1,13 @@
+:root {
+	--brand-yellow: #ffcf00;
+	--brand-green: #14ff00;
+	--brand-cyan: #00b2ff;
+}
+
 @import "tailwindcss";
 
 @theme {
 	--font-quicksand: "Quicksand", sans-serif;
+	--font-roboto: "Roboto", sans-serif;
+	--font-montserrat: "Montserrat", sans-serif;
 }

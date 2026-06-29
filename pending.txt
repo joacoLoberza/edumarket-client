@@ -1,0 +1,4 @@
+Tengo que:
+	_. Terminar animaciones de error en el login.
+	_. Hacer animaciones de success en el login.
+	_. Tratar al usuario de vos y no de usted.

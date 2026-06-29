@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import Loggin from './pages/Loggin';
+import Login from './pages/Login';
 
 export default function App() {
 	return (
@@ -12,7 +12,7 @@ export default function App() {
 					<Route path="cart"/>
 					<Route path="products"/>
 				</Route>
-				<Route path="loggin" element={<Loggin/>}/>
+				<Route path="login" element={<Login/>}/>
 				<Route path="register"/>
 				<Route path="profile">
 					<Route index/>

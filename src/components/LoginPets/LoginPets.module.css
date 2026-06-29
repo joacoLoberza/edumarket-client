@@ -1,0 +1,191 @@
+/* Entrace Animations */
+
+@keyframes rule-pet-entrace {
+	0% { transform: translateY(0%); }
+	50% { transform: translateY(-75%); }
+	100% { transform: translateY(0%); }
+}
+
+.rule-pet-entrace {
+	animation: rule-pet-entrace 0.75s ease-in-out forwards;
+}
+
+@keyframes crayon-pet-entrace {
+	0% { transform: translateY(0%); }
+	50% { transform: translateY(-15%) rotate(15deg);}
+	75% { transform: rotate(-15deg); }
+	90% { transform: rotate(7deg);}
+	100% { transform: translateY(0%) rotate(0deg); }
+}
+
+.crayon-pet-entrace {
+	animation: crayon-pet-entrace 1.1s ease-in-out forwards;
+}
+
+@keyframes pencil-pet-entrace {
+	0% { transform: translateY(0%); }
+	40% { transform: translateY(10%); }
+	100% { transform: translateY(0%); }
+}
+
+.pencil-pet-entrace {
+	animation: pencil-pet-entrace 1s ease forwards;
+}
+
+@keyframes marker-pet-entrace {
+	0% { transform: translateY(0%); }
+	50% { transform: translate(5%, 15%) rotate(-10deg);}
+	100% { transform: translate(0%) rotate(0deg); }
+}
+
+.marker-pet-entrace {
+	animation: marker-pet-entrace 0.6s ease-in forwards;
+}
+
+@keyframes purple-pet-entrace {
+	0% { transform: translateX(-100%); }
+	60% { transform: translateX(30%); }
+	100% { transform: translateX(0%); }
+}
+
+.purple-pet-entrace {
+	animation: purple-pet-entrace 0.7s ease-in-out forwards;
+}
+
+/* Error Animations */
+
+	/*Pencil*/
+@keyframes pencil-mou {
+	0% { transform: rotate(0deg); }
+	25% {transform: rotate(-5deg);}
+	75% {transform: rotate(5deg);}
+	100% { transform: rotate(0deg); }
+}
+
+.pencil-mou {
+	animation: pencil-mou 1.25s ease-in-out forwards;
+}
+
+@keyframes pencil-shake {
+	0% {transform: translateY(0%) rotate(0deg);}
+	25% {transform: translateY(5%) rotate(15deg);}
+	50% {transform: translateY(5%) rotate(-15deg);}
+	65% {transform: translateY(5%) rotate(10deg);}
+	80% {transform: translateY(5%) rotate(-10deg);}
+	100% {transform: translateY(0%) rotate(0deg);}
+}
+
+.pencil-shake {
+	animation: pencil-shake 1.25s ease-out forwards;
+}
+	/*Rule*/
+@keyframes rule-mou {
+	0% {transform: translateY(0vh) rotate(0deg);}
+	50% {transform: translateY(-40vh) rotate(720deg);}
+	50.1% {transform: translateY(-40vh) rotate(-720deg);}
+	100% {transform: translateY(0vh) rotate(0deg);}
+}
+.rule-mou {
+	animation: rule-mou 1.25s ease-in-out forwards;
+}
+
+@keyframes rule-eye {
+	0% {transform: translateY(0%);}
+	50% {transform: translateY(-200%);}
+	100% {transform: translateY(0%);}
+}
+.rule-eye {
+	animation: rule-eye 1s ease-in-out forwards;
+}
+
+/*Internal Error Animations*/
+	/* Pencil */
+@keyframes pencil-inter-err {
+	0% {transform: translateY(0%);}
+	50% {transform: translateY(10%);}
+	100% {transform: translateY(0%);}	
+}
+
+.pencil-inter-err {
+	animation: pencil-inter-err 1.25s ease forwards;
+}
+
+@keyframes pencil-inter-err-eye {
+	0% {transform: rotate(0deg) translate(-25%, -25%); transform-origin: 50% 50%;}
+	100% {transform: rotate(720deg) translate(-25%, -25%); transform-origin: 50% 50%;}
+}
+
+.pencil-inter-err-eye {
+	animation: pencil-inter-err-eye 1.25s ease;
+}
+
+	/*Crayon*/
+@keyframes crayon-inter-err {
+	0% {transform: rotate(0deg);}
+	10% {transform: rotate(10deg);}
+	100% {transform: rotate(0deg);}
+}
+
+.crayon-inter-err {
+	animation: crayon-inter-err 1.25s ease-in forwards;
+}
+
+	/*Rule*/
+@keyframes rule-inter-err {
+	0%{transform: translateY(0%);}
+	20%{transform: translateY(-1%);}
+	30%{transform: translateY(0%);}
+	40%{transform: translateY(-1%);}
+	50%{transform: translateY(0%);}
+	60%{transform: translateY(-1%);}
+	70%{transform: translateY(0%);}
+	80%{transform: translateY(-1%);}
+	100%{transform: translateY(0%);}
+}
+
+.rule-inter-err {
+	animation: rule-inter-err 1s ease forwards;
+}
+
+@keyframes rule-mou-inter-err {
+	0%{transform: translateY(0%);}
+	20%{transform: translateY(-150%);}
+	30%{transform: translateY(0%);}
+	40%{transform: translateY(-150%);}
+	50%{transform: translateY(0%);}
+	60%{transform: translateY(-150%);}
+	70%{transform: translateY(0%);}
+	80%{transform: translateY(-150%);}
+	100%{transform: translateY(0%);}
+}
+.rule-mou-inter-err {
+	animation: rule-mou-inter-err 0.75s ease forwards;
+}
+
+	/*Edumarket*/
+@keyframes edum-inter-err {
+	25%{left: 0;}
+	100% {left: 16.6%;}
+}
+.edum-inter-err {
+	animation: edum-inter-err 1s ease-in forwards;
+}
+
+@keyframes edum-inter-err-eye {
+	0% {
+        transform: translate(0%, 0%) rotate(0deg);
+        transform-origin: 100% 100%;
+    }
+    25% {
+        transform: translate(-50%, 0%) rotate(0deg);
+        transform-origin: 100% 100%;
+    }
+    100% {
+        transform: translate(-25%, -25%) rotate(360deg);
+        transform-origin: 100% 100%;
+    }
+}
+
+.edum-inter-err-eye {
+	animation: edum-inter-err-eye 1s ease-in forwards;
+}
