@@ -1,18 +1,19 @@
 import { useState, useEffect, useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 import styles from './Login.module.css';
 import api from "../../config/axiosApi";
-import eye from '../../assets/icons/login/eye.png';
-import eyeCrossedOut from '../../assets/icons/login/eyeCrossedOut.png';
-import cornerLines from '../../assets/images/login/cornerLines.png'
-import LoginPets from "../../components/LoginPets"
+import CrossedOutEye from '../../assets/icons/general/crossedOutEye.svg?react';
+import OpenEye from '../../assets/icons/general/openEye.svg?react';
+import cornerLines from '../../assets/images/login/cornerLines.png';
+import LoginPets from "../../components/LoginPets";
+import FormInput from "../../components/FormInput/FormInput";
+import ErrorToast from "../../components/ErrorToast/ErrorToast";
 
 const signInGradient = "bg-[linear-gradient(transparent,var(--color-zinc-200))]";
 
 export default function Login () {
 	const [showPass, setShowPass] = useState(false);
-	const [passIcon, setPassIcon] = useState(eye);
 	const [typePass, setTypePass] = useState("password");
 	const [error, setError] = useState(false);
 	const [internalError, setInternalError] = useState(false);
@@ -21,7 +22,6 @@ export default function Login () {
 	const [loading, setLoading] = useState(false);
 
 	const navigate = useNavigate();
-	const location = useLocation();
 	const { setName, setImage } = useContext(UserContext);
 
 	const handleSubmit = async (e) => {
@@ -65,7 +65,7 @@ export default function Login () {
 			e.target.reset();
 
 			//Go back.
-			navigate(location.state?.from || -1);
+			navigate(-1);
 		} catch(error) {
 			//Error handling.
 			const res = error?.response;
@@ -76,7 +76,7 @@ export default function Login () {
 				setMessage("No pudimos conectarnos al servidor.")
 			} else {
 				const resData = res?.data
-				console.error(`%cAPI - ${res.status}|%c${resData?.message}`, "color: rgb(255, 255, 0);");
+				console.error(`%cAPI - ${res.status}|%c ${resData?.message}`, "color: rgb(255, 255, 0);");
 				if (resData?.type === 'Overloaded') {
 					setInternalError(true);
 					setMessage('Estamos sobrecargados de solicitudes.')
@@ -105,10 +105,8 @@ export default function Login () {
 
 	useEffect(() => {
 		if (showPass) {
-			setPassIcon(eyeCrossedOut);
 			setTypePass("text");
 		} else {
-			setPassIcon(eye);
 			setTypePass("password")
 		}
 	}, [showPass])
@@ -120,26 +118,13 @@ export default function Login () {
 			<div className="flex relative basis-1/2 shrink-1 grow-1 overflow-hidden shadow-[-20px_0px_20px_-5px_rgba(120,120,120,0.3)]">
 				<form onSubmit={handleSubmit} className={`z-10 absolute w-full h-full bg-gray-100 p-20 flex flex-col gap-7 justify-center items-center @container/normal transition-translate duration-500 ease-out ${loading && "-translate-y-[120%]"}`}>
 					{(error || internalError) &&
-						<div 
-							onClick={() => {setError(false); setInternalError(false)}}
-							className={`${styles['toast-entrace']} z-10 shadow-[-8px_8px_12px_var(--color-gray-400)] max-w-1/3 flex absolute bottom-5 right-5 cursor-pointer bg-slate-200 rounded-sm`}
-						>
-							<div className="flex flex-col gap-[10%] items-center justify-center p-1 bg-slate-50 w-5 rounded-l-sm">
-								<div className="w-2 h-2 rounded-full bg-[var(--brand-green)]"></div>
-								<div className="w-2 h-2 rounded-full bg-[var(--brand-cyan)]"></div>
-								<div className="w-2 h-2 rounded-full bg-[var(--brand-yellow)]"></div>
-							</div>
-							<p className="m-3 text-xs text-red-400 font-montserrat font-medium">
-								{message}
-								{internalError && <><br/> Compruebe su conección o intente más tarde.</>}
-							</p>
-						</div>
+						<ErrorToast onClick={() => {setError(false); setInternalError(false)}} message={<> {message} {internalError && <><br/> Compruebe su conección o intente más tarde.</>}</>}/>
 					}
 					<h1 className="z-10 select-none font-quicksand font-semibold text-5xl text-gray-800 mb-[15%]">Bienvenido de nuevo.</h1>
-					<FormInput placeholder="Usuario / e-mail" type="text" name="identifier"/>
+					<FormInput placeholder="Usuario / e-mail" type="text" name="identifier" classes={"w-[60cqw] h-[9cqw]"}/>
 					<div className="relative">
-						<FormInput placeholder="Contraseña" type={typePass} name="password"/>
-						<button type="button" className="h-1/3 absolute top-1/3 right-3" onClick={() => {setShowPass(!showPass)}}><img src={passIcon} className="h-full"/></button>
+						<FormInput placeholder="Contraseña" type={typePass} name="password" classes={"w-[60cqw] h-[9cqw]"}/>
+						<button type="button" className="h-1/3 absolute top-1/3 right-3" onClick={() => {setShowPass(!showPass)}}>{showPass?  <CrossedOutEye className="text-gray-600 h-full w-full"/> : <OpenEye className="text-gray-600 h-full w-full"/>}</button>
 					</div>
 					<div className={`absolute bottom-0 h-2/10 w-full flex justify-center`}>
 						<button type="submit" disabled={loading} className="z-10 peer text-gray-400 text-2xl translate-y-1/4 font-roboto font-bold tracking-wide flex flex-col items-center gap-20 hover:translate-y-0 hover:gap-5 hover:text-stone-400 transition-all duration-1500 ease-out">
@@ -163,12 +148,4 @@ export default function Login () {
 			</div>
 		</div>
 	)
-}
-
-function FormInput({placeholder, type, name}) {
-	return <input
-		type={type}
-		name={name}
-		placeholder={placeholder}
-		className="w-[60cqw] h-[9cqw] bg-slate-200 rounded-full 2xl py-1 px-4 placeholder-slate-400 shadow-[4px_5px_10px_-5px_rgba(120,120,120,0.3)_inset] focus:outline-none text-zinc-500 "/>
 }

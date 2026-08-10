@@ -10,4 +10,26 @@
 	--font-quicksand: "Quicksand", sans-serif;
 	--font-roboto: "Roboto", sans-serif;
 	--font-montserrat: "Montserrat", sans-serif;
+	--font-alfaslabone: "Alfa Slab One", sans-serif;
+}
+
+@layer components {
+	/* General */
+	.fancy-button {
+		@apply font-montserrat font-bold text-gray-500 hover:text-gray-400
+	}
+	
+	/* Register Page */
+	.selected-stage-tag {
+		@apply border-y-15 bg-gray-200 border-y-gray-200
+	}
+	.stage-tag {
+		@apply flex flex-row items-center gap-5 pr-10 pl-5.5 w-[90cqw] z-10 rounded-bl-full rounded-tl-full
+	}
+	.stage-number {
+		@apply rounded-full shrink-0 grow-0 w-[12cqh] aspect-square flex items-center justify-center font-montserrat font-extrabold text-3xl select-none
+	}
+	.stage-tag-txt {
+		@apply font-roboto tracking-wider text-2xl select-none text-zinc-600
+	}
 }

@@ -1,4 +1,13 @@
 Tengo que:
-	_. Terminar animaciones de error en el login.
-	_. Hacer animaciones de success en el login.
-	_. Tratar al usuario de vos y no de usted.
+			_. Terminar animaciones de error en el login.
+			_. Hacer animaciones de success en el login.
+			_. Tratar al usuario de vos y no de usted.
+			_. Hacer botón para volver atrás y para registrarse en el login.
+			_. Geolocalizar la computadora del usuario para poner coordenadas inciales de market y centro de mapa en el mapa para indicar domicilio.
+			_. Validar si la contraseña es fuerte.
+			_. Poner botón para omitir pasos en el formulario de registro.
+			_. Hacer que solicite datos faltantes antes de hacer x acción que los necesite si se omitieron en el registro.
+			_. Crear el interceptor de axios para cuando el token expire limpiar el localsotrage.
+			_. En algunas páginas como Login.jsx uso useLocation para sacar del state "from", que indica de ruta proviene la página actual (retroceder siempre ). 
+			_. Cambiar todos los endpoints con GET en el backend que implementen paginación para que retornen null si la lista es desigual que el limite.
+IMPORTANTE  _. Probar hook useAutoPag con react strict mode y tratar de entender por que no anda. (Al recargar la página no funciona.).

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.47571549"
+     inkscape:cx="397.29629"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1371"
+     inkscape:window-height="743"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="105.11904,284.9159"
+       orientation="1,0"
+       id="guide6"
+       inkscape:locked="false" />
+    <inkscape:page
+       x="0"
+       y="0"
+       width="210"
+       height="297"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path2"
+       style="fill:#ffffff;stroke:none;stroke-width:0.264583"
+       inkscape:transform-center-x="-3.7927398"
+       inkscape:transform-center-y="0.51080273"
+       d="m 90.657561,-1.7590092 c -2.228242,-1e-7 -64.969152,110.3550192 -64.969152,110.3550192 0,0 -0.832529,1.14973 -0.134299,2.40698 0.468172,0.843 2.268511,1.58222 5.083405,2.24061 V 338.88109 H 149.52697 V 113.49573 c 3.47814,-0.71806 5.05153,-1.41101 6.23404,-2.49274 0.85978,-0.7865 0.40463,-1.9235 0.40463,-1.9235 0,0 -63.279837,-110.8384991 -65.508079,-110.8384992 z M 56.39245,117.4337 h 67.79375 a 8.1237052,8.1237052 0 0 1 8.12114,8.12461 v 190.12471 a 8.1237052,8.1237052 0 0 1 -8.12114,8.12115 H 56.39245 a 8.1237052,8.1237052 0 0 1 -8.12461,-8.12115 V 125.55831 a 8.1237052,8.1237052 0 0 1 8.12461,-8.12461 z m 8.121144,16.24576 V 307.55841 H 116.06159 V 133.67946 Z"
+       transform="matrix(0.59642237,0,0,0.59642237,51.047934,49.767069)" />
+  </g>
+</svg>
