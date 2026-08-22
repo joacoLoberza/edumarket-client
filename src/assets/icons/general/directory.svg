@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="366.79077mm"
+   height="226.77931mm"
+   viewBox="0 0 366.79077 226.77931"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-623.78904,-27.22461)">
+    <g
+       id="g2">
+      <path
+         style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+         d="m 673.35547,27.224609 a 12.50125,12.50125 0 0 0 -8.83985,3.660157 l -3.0996,3.099609 a 12.50125,12.50125 0 0 0 -3.66016,8.839844 v 19.6875 h -18.36719 c -8.42618,0 -15.59961,7.175378 -15.59961,15.601562 V 238.40234 c 0,8.42619 7.17343,15.60157 15.59961,15.60157 h 266.19727 c 8.42618,0 15.59961,-7.17538 15.59961,-15.60157 V 78.113281 c 0,-8.426184 -7.17343,-15.601562 -15.59961,-15.601562 H 799.70898 v -19.6875 a 12.50125,12.50125 0 0 0 -3.66015,-8.839844 l -3.09961,-3.099609 a 12.50125,12.50125 0 0 0 -8.83985,-3.660157 z m 9.40039,25 h 91.95312 v 19.6875 A 12.50125,12.50125 0 0 0 778.37109,80.75 l 3.09961,3.101562 a 12.50125,12.50125 0 0 0 8.83985,3.660157 h 105.875 V 229.00391 H 648.78906 V 87.511719 h 18.36524 a 12.50125,12.50125 0 0 0 8.83984,-3.660157 L 679.09375,80.75 a 12.50125,12.50125 0 0 0 3.66211,-8.837891 z"
+         id="rect1" />
+      <path
+         style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#ffffff;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+         d="m 819.59961,31.921875 a 12.5,12.5 0 0 0 -12.5,12.5 12.5,12.5 0 0 0 12.5,12.5 h 143.4668 L 932.69336,221.75 a 12.5,12.5 0 0 0 10.02734,14.55859 12.5,12.5 0 0 0 14.5586,-10.02734 L 990.37305,46.6875 A 12.50125,12.50125 0 0 0 978.08008,31.921875 Z"
+         id="path1" />
+    </g>
+  </g>
+</svg>

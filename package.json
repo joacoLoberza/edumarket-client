@@ -34,7 +34,7 @@
     "leaflet": "^1.9.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-image-crop": "^11.1.2",
+    "react-easy-crop": "^6.2.3",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^6.14.1",
     "zxcvbn": "^4.4.2"

@@ -1,0 +1,16 @@
+.ownCropArea {
+	border: none !important;
+	color: white !important;
+	cursor: move !important;
+	width: 50cqw !important;
+	height: 50cqw !important;
+}
+
+.cropImage {
+	width: 50cqw !important;
+}
+
+.cropContainerArea {
+	cursor: default !important;
+	top: 10vh !important;
+}

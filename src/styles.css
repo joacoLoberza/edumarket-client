@@ -16,9 +16,20 @@
 @layer components {
 	/* General */
 	.fancy-button {
-		@apply font-montserrat font-bold text-gray-500 hover:text-gray-400
+		@apply font-montserrat font-bold text-gray-500 hover:text-gray-400 transition-colors duration-400 ease-in-out
+	}
+
+	.fancy-text {
+		@apply font-montserrat my-3 text-gray-600
+	}
+
+	/* Navbar */
+	.navbar-button {
+		@apply text-zinc-600 hover:text-zinc-400 transition-colors duration-500 ease-in-out font-medium font-montserrat
 	}
 	
+	/* Home */
+
 	/* Register Page */
 	.selected-stage-tag {
 		@apply border-y-15 bg-gray-200 border-y-gray-200
@@ -32,4 +43,34 @@
 	.stage-tag-txt {
 		@apply font-roboto tracking-wider text-2xl select-none text-zinc-600
 	}
+}
+
+.leaflet-control-zoom {
+	border: none !important;
+	display: flex !important;
+	gap: 8px;
+}
+
+.leaflet-control-zoom a {
+	background-color: color-mix(in oklch, var(--color-zinc-500) 30%, transparent) !important;
+	border-radius: 9999px !important;
+	color: var(--color-gray-800);
+	transition: background-color 200ms ease-in-out;
+}
+
+.leaflet-control-zoom-in:hover {
+	background-color: color-mix(in oklch, var(--color-zinc-500) 50%, transparent) !important;
+}
+
+.leaflet-control-zoom-out:hover {
+	background-color: color-mix(in oklch, var(--color-zinc-500) 50%, transparent) !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #E2E8F0 inset !important;
+    -webkit-text-fill-color: #1E293B !important;
+    transition: background-color 5000s ease-in-out 0s;
 }

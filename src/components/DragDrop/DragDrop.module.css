@@ -1,0 +1,12 @@
+@keyframes twinkle {
+	0%, 100% {
+		background-color: var(--color-slate-100);
+	}
+	50% {
+		background-color: var(--color-gray-200);
+	}
+}
+
+.dragDropEnter {
+	animation: twinkle 2s ease infinite;
+}

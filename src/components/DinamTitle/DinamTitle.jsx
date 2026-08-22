@@ -1,16 +1,24 @@
 import { useEffect, useState, useRef} from "react";
 
-export default function DinamTitle({next = true, interval = 250, titles = ['NotTitleAvilable'], classes = '', onTitleChange}) {
+export default function DinamTitle({next = true, reverse = false, interval = 250, titles = ['NotTitleAvilable'], classes = '', onTitleChange}) {
 	const [text, setText] = useState('');
 	const currenTxt = useRef(-1);
 
 	useEffect(() => {
 		let currentRender = true;
 
-		if (titles.length - 1 > currenTxt.current) {
-			currenTxt.current += 1;
+		if (reverse) {
+			if (0 < currenTxt.current) {
+				currenTxt.current -= 1;
+			} else {
+				currenTxt.current = titles.length - 1;
+			}
 		} else {
-			currenTxt.current = 0;
+			if (titles.length - 1 > currenTxt.current) {
+				currenTxt.current += 1;
+			} else {
+				currenTxt.current = 0;
+			}
 		}
 
 		const currentTitle = titles[currenTxt.current];

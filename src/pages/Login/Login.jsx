@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
-import styles from './Login.module.css';
 import api from "../../config/axiosApi";
 import CrossedOutEye from '../../assets/icons/general/crossedOutEye.svg?react';
 import OpenEye from '../../assets/icons/general/openEye.svg?react';
@@ -9,6 +8,7 @@ import cornerLines from '../../assets/images/login/cornerLines.png';
 import LoginPets from "../../components/LoginPets";
 import FormInput from "../../components/FormInput/FormInput";
 import ErrorToast from "../../components/ErrorToast/ErrorToast";
+import LoadSpinner from "../../components/LoadSpinner";
 
 const signInGradient = "bg-[linear-gradient(transparent,var(--color-zinc-200))]";
 
@@ -138,14 +138,14 @@ export default function Login () {
 					<img src={cornerLines} className="select-none absolute -top-2 right-0 w-1/2 aspect-square z-0"/>
 				</form>
 				<div className="absolute z-0 h-full w-full bg-zinc-200 flex justify-center items-center">
-					<div className="relative w-1/10 aspect-square @container/normal">
-						<div className={`${loading && styles['elSequare']} absolute bg-[conic-gradient(from_0deg,var(--brand-green)_0deg_270deg,transparent_270deg_360deg)] w-3/10 aspect-square top-0 left-0 origin-[170%_170%]`}></div>
-						<div className={`${loading && styles['pacman']} absolute bg-[conic-gradient(from_315deg,var(--brand-yellow)_0deg_260deg,transparent_260deg_360deg)] rounded-full aspect-square w-3/10 top-0 right-0`}></div>
-						<div className={`${loading && styles['triangParent']} absolute bottom-0 right-0 origin-[-70%_-70%]`}><div className={`${loading && styles['triangle']} border-b-[30cqw] border-b-[var(--brand-cyan)] border-x-[15cqw] border-x-transparent`}></div></div>
-						<div className={`${loading && styles['arch']} absolute w-4/10 aspect-square border-[12cqw] border-[var(--color-rose-600)] border-r-transparent border-t-transparent rounded-full bottom-0 left-0`}></div> 
-					</div>
+					<LoadSpinner loading={loading}/>
 				</div>
 			</div>
 		</div>
 	)
 }
+
+/**
+ * TAREAS:
+ * 1. Cambiar el lenguaje formal de los errores a uno informal.
+ */

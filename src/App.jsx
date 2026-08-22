@@ -6,6 +6,7 @@ import Lists from './pages/Lists';
 import List from './pages/List';
 import Schools from './pages/Schools';
 import Cart from './pages/Cart';
+import Home from './pages/Home';
 
 export default function App() {
 	return (
@@ -15,7 +16,7 @@ export default function App() {
   	}}>
 			<Routes>
 				<Route element={ <MainLayout/> }>
-					<Route index/>
+					<Route index element={<Home/>}/>
 					<Route path="schools">
 						<Route index element={<Schools/>}/>
 						<Route path="lists/:id" element={<Lists/>}/>

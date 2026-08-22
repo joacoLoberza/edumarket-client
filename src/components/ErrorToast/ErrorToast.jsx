@@ -4,7 +4,7 @@ export default function ErrorToast ({ message, onClick }) {
 	return (
 		<div 
 			onClick={onClick}
-			className={`${styles['toast-entrace']} z-10 shadow-[-8px_8px_12px_var(--color-gray-400)] max-w-1/3 flex absolute bottom-5 right-5 cursor-pointer bg-slate-200 rounded-sm`}
+			className={`${styles['toast-entrace']} z-10 shadow-[-8px_8px_12px_var(--color-gray-400)] max-w-[20vw] flex absolute bottom-5 right-5 cursor-pointer bg-slate-200 rounded-sm`}
 		>
 			<div className="flex flex-col gap-[10%] items-center justify-center p-1 bg-slate-50 w-5 rounded-l-sm">
 				<div className="w-2 h-2 rounded-full bg-[var(--brand-green)]"></div>
@@ -17,3 +17,10 @@ export default function ErrorToast ({ message, onClick }) {
 		</div>
 	)
 }
+
+/**
+ * TAREAS:
+ * 1. Implementar animaciónes de salida y de cúmulo cuando se implemente la segunda tarea.
+ * 2. Hacer posible que se acumulen notificaciones en una pila, con un maximo x, como de 5.
+ * 3. Cambiar los colores de los puntitos por otros (ya no son los colores de la marca y visualmente son molestos).
+ */

@@ -11,3 +11,7 @@ Tengo que:
 			_. En algunas páginas como Login.jsx uso useLocation para sacar del state "from", que indica de ruta proviene la página actual (retroceder siempre ). 
 			_. Cambiar todos los endpoints con GET en el backend que implementen paginación para que retornen null si la lista es desigual que el limite.
 IMPORTANTE  _. Probar hook useAutoPag con react strict mode y tratar de entender por que no anda. (Al recargar la página no funciona.).
+			_. Arreglar un poco más la animación del arch en el LoadSpinner (mientras más se acerca a la esquina superior derecha, más se sale del "layout" cuadrado).
+			_. Usar el use location en vez de use navigate -1. El -1 no crea nueva ruta en el historial, solo retrocede.
+			_. Poner botón de ¿no tenes cuenta? en el login.
+			_. Poner el cursor potiner donde vea que hace falta.
