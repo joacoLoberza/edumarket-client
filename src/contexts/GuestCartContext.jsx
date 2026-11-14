@@ -1,8 +1,8 @@
 import { useState, useEffect, createContext } from "react";
 
-const CartContext = createContext();
+const GuestCartContext = createContext();
 
-export function CartProvider({ children }) {
+export function GuestCartProvider({ children }) {
   const [cart, setCart] = useState(() => {
     try {
       const savedCart = localStorage.getItem('guestCart');
@@ -22,32 +22,32 @@ export function CartProvider({ children }) {
   }, [cart]);
 
   const addItem = (newItem) => {
-    setCart(prev => {
-      const exists = prev.some(item => item.id === newItem.id);
-      
-      if (exists) {
-        return prev.map(item =>
-          item.product === newItem.id
-            ? { ...item, amount: (item.amount || 1) + (newItem.amount || 1) }
-            : item
-        );
-      }
-      
-      // Si es un item nuevo, lo agregamos
-      return [...prev, newItem];
-    });
+    if (newItem?.productId || newItem?.listId) {
+      const hasList = Boolean(newItem?.listId)
+      setCart(prev => {
+        const exists = prev.some(item => hasList? item.listId === newItem.listId : item.productId === newItem.productId);
+        
+        if (exists) {
+          return prev.map(item =>
+            (hasList? item.listId === newItem.listId : item.productId === newItem.productId)
+              ? { ...item, amount: (item.amount || 1) + (newItem.amount || 1) }
+              : item
+          );
+        }
+        
+        return [...prev, newItem];
+      });
+    }
   };
 
-  // Eliminar un item
   const quitItem = (itemId) => {
-    setCart(prev => prev.filter(item => item.id !== itemId));
+    setCart(prev => prev.filter(item => item.itemId !== itemId));
   };
 
-  // Cambiar cantidad de forma inmutable
   const changeAmount = (itemId, newAmount) => {
     setCart(prev =>
       prev.map(item =>
-        item.id === itemId
+        item.itemId === itemId
           ? { ...item, amount: newAmount } // Creamos un nuevo objeto
           : item
       )
@@ -55,10 +55,10 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cart, quitItem, addItem, changeAmount }}>
+    <GuestCartContext.Provider value={{ guestCart: cart, quitItem, addItem, changeAmount }}>
       {children}
-    </CartContext.Provider>
+    </GuestCartContext.Provider>
   );
 }
 
-export default CartContext;
+export default GuestCartContext;

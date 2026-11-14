@@ -1,0 +1,84 @@
+@keyframes boxDrop {
+  0%, 75% {
+    transform: translate(10rem, -5rem) rotate(90deg);
+  }
+  80% {
+    transform: translate(4rem, -3rem) rotate(90deg);
+  }
+  85% {
+    transform: translate(0rem, 0rem) rotate(20deg);
+  }
+  87% {
+    transform: translate(-1.5rem, 0.25rem) rotate(10deg);
+  }
+  89% {
+    transform: translate(1rem, 0.5rem) rotate(25deg);
+  }
+  92% {
+    transform: translate(-1rem, 0.75rem) rotate(15deg);
+  }
+  95% {
+    transform: translate(0.75rem, 1rem) rotate(25deg);
+  }
+  98% {
+    transform: translate(-0.5rem, 1.25rem) rotate(15deg);
+  }
+  99% {
+    transform: translate(0.5rem, 1.5rem) rotate(25deg);
+  }
+  99.5% {
+    transform: translate(-0.25rem, 1.75rem) rotate(15deg);
+  }
+  100% {
+    transform: translate(0rem, 2.5rem) rotate(20deg);
+  }
+}
+
+@keyframes boxVibration {
+	0%, 85% {
+		transform: translateX(0rem);
+	}
+	87% {
+   		transform: translateX(-0.3rem);
+	}
+	89% {
+		transform: translateX(0.3rem);
+	}
+	92% {
+		transform: translateX(-0.25rem);
+	}
+	95% {
+		transform: translateX(0.25rem);
+	}
+	98% {
+		transform: translateX(-0.125rem);
+	}
+	99% {
+		transform: translateX(0.125rem);
+	}
+	99.5% {
+		transform: translateX(-0.06rem);
+	}
+	100% {
+		transform: translateX(0rem);
+	}
+}
+
+.boxVibration {
+	animation: boxVibration 3s linear infinite;
+}
+
+.boxDrop {
+	--box-color: var(--color-pink-500);
+	--tape-color: var(--color-pink-600);
+	--box-size: 1;
+
+	background-color: var(--box-color);
+	transform: scale(var(--boxSize));
+	animation: boxDrop 3s linear infinite;
+}
+
+.boxTape {
+	border-left-color: var(--tape-color);
+	border-right-color: var(--tape-color);
+}

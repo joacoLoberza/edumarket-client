@@ -1,0 +1,88 @@
+/*ENTRACES*/
+@keyframes stage-title-enter-right {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+.stage-title-enter-right {
+	animation: stage-title-enter-right 1s cubic-bezier(0,.85,.2,.90) forwards;
+}
+
+@keyframes stage-title-enter-left {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+.stage-title-enter-left {
+	animation: stage-title-enter-left 1s cubic-bezier(0,.85,.2,.90) forwards;
+}
+
+@keyframes stage-number-enter {
+	0% {
+		outline-color: transparent;
+		outline-width: 0px;
+		outline-style: solid;
+	}
+	100% {
+		outline-color: var(--color-zinc-200);
+		outline-width: 4px;
+		outline-style: solid;
+	}
+}
+
+.stage-number-enter {
+	animation: stage-number-enter 1s ease-out forwards;
+}
+
+/*EXITS*/
+@keyframes stage-title-exit-right {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.stage-title-exit-right {
+	animation: stage-title-exit-right 1s cubic-bezier(0,.15,.8,.1) forwards;
+}
+
+@keyframes stage-title-exit-left {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.stage-title-exit-left {
+	animation: stage-title-exit-left 1s cubic-bezier(0,.15,.8,.1) forwards;
+}
+
+
+@keyframes stage-number-exit {
+	0% {
+		outline-color: var(--color-zinc-200);
+		outline-width: 4px;
+		outline-style: solid;
+	}
+	100% {
+		outline-color: transparent;
+		outline-width: 0px;
+		outline-style: solid;
+	}
+}
+
+.stage-number-exit {
+	animation: stage-number-exit 1s ease-out forwards;
+}

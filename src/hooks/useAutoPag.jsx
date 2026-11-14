@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import api from "../config/axiosApi";
+import api from "../config/axiosApi.js";
 
 export default function useAutoPag(url, dataKey, filters, errorHandling) {
+	//The structure of this must be equal than cart returned in the backend.
 	const [data, setData] = useState([]);
 	const [load, setLoad] = useState(false);
 	const refFilters = useRef(filters);

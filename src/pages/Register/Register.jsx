@@ -254,7 +254,7 @@ function Register() {
         <div className="flex flex-row h-screen">
             <div className="relative grow shrink-0 min-w-1/2">
                 <form className={`relative z-20 @container overflow-scroll h-screen bg-white flex transition-translate duration-500 ease-out ${(loading || sentMail)&& "-translate-y-[100%]"} ${!mapLayout&& 'pt-15'}`} ref={regForm} onSubmit={handleSubmit}>
-                    <button type="button" onClick={() => {navigate(-1)}} className={`fancy-button absolute right-10 top-10 z-20 ${mapLayout&& "px-3 py-1 bg-white rounded-full"}`}>Inicio</button>
+                    <button type="button" onClick={() => {navigate('/')}} className={`fancy-button absolute right-10 top-10 z-20 ${mapLayout&& "px-3 py-1 bg-white rounded-full"}`}>Inicio</button>
                     <div className={`px-[20cqw] flex flex-col relative ${mapLayout? 'justify-end' : 'gap-6 my-auto'}`}>
                         {!mapLayout &&
                             <div className="relative flex items-center">
@@ -596,4 +596,5 @@ export default Register;
  * 17. Consultar si oculto o no los enlaces a leaflet.
  * 18. Acceder a la ubicación del usuario para posicionar el marker del mapa.
  * 19. Hacer más bonito el marker del mapa.
+ * 20. Resolver el envío accidental del formulario, se envía al precionar enter en cualquier stage.
  */

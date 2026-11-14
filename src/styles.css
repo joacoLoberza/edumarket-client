@@ -25,7 +25,7 @@
 
 	/* Navbar */
 	.navbar-button {
-		@apply text-zinc-600 hover:text-zinc-400 transition-colors duration-500 ease-in-out font-medium font-montserrat
+		@apply text-zinc-600 group-hover:text-zinc-500 transition-all duration-500 ease-in-out font-semibold font-montserrat
 	}
 	
 	/* Home */
@@ -73,4 +73,8 @@ input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px #E2E8F0 inset !important;
     -webkit-text-fill-color: #1E293B !important;
     transition: background-color 5000s ease-in-out 0s;
+}
+
+html {
+	scrollbar-color: rgba(219, 219, 219, 0.754) transparent;
 }

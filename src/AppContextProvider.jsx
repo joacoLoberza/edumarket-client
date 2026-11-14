@@ -1,12 +1,12 @@
-import { UserProvider } from "./contexts/UserContext"
-import { CartProvider } from "./contexts/CartContext"
+import { UserProvider } from "./contexts/UserContext.jsx";
+import { GuestCartProvider } from "./contexts/GuestCartContext.jsx";
 
 export default function AppProvider({children}) {
 	return (
 		<UserProvider>
-			<CartProvider>
+			<GuestCartProvider>
 				{ children }
-			</CartProvider>
+			</GuestCartProvider>
 		</UserProvider>
 	)
 }

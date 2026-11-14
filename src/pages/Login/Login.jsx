@@ -1,10 +1,16 @@
+//Packages
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+//Files
 import UserContext from "../../contexts/UserContext";
 import api from "../../config/axiosApi";
+
+//Images & Graphic Resources
 import CrossedOutEye from '../../assets/icons/general/crossedOutEye.svg?react';
 import OpenEye from '../../assets/icons/general/openEye.svg?react';
-import cornerLines from '../../assets/images/login/cornerLines.png';
+
+//Components
 import LoginPets from "../../components/LoginPets";
 import FormInput from "../../components/FormInput/FormInput";
 import ErrorToast from "../../components/ErrorToast/ErrorToast";
@@ -55,8 +61,8 @@ export default function Login () {
 			console.log(`%cAPI - ${res.status}|%c ${apiData.message}`, "color: rgb(255,255,0")
 
 			//Save data in the context.
-			setName(apiData.name);
-			setImage(apiData.image);
+			setName(apiData.user.name);
+			setImage(apiData.user.image);
 
 			//Success state.
 			setSuccess(true);
@@ -135,7 +141,6 @@ export default function Login () {
 						</button>
 						<div className={`z-0 top-0 absolute w-full h-full ${signInGradient} transition-opacity duration-1500 ease-out opacity-0 peer-hover:opacity-100`}></div>
 					</div>
-					<img src={cornerLines} className="select-none absolute -top-2 right-0 w-1/2 aspect-square z-0"/>
 				</form>
 				<div className="absolute z-0 h-full w-full bg-zinc-200 flex justify-center items-center">
 					<LoadSpinner loading={loading}/>

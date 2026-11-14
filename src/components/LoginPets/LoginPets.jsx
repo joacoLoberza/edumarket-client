@@ -1,5 +1,11 @@
+//Packages
 import { useEffect, useState, useRef } from "react";
+
+//Files
 import styles from './LoginPets.module.css';
+
+//Custom Hooks
+import useFollowEyes from "../../hooks/useFollowEyes.jsx";
 
 function LoginPets({ state }) {
 	const [ eyePos, setEyePos ] = useState({ pink: [0,0], blue: [0,0], red: [0,0], green: [0,0]});
@@ -22,40 +28,7 @@ function LoginPets({ state }) {
 		edum: state.internalError,
 	}) }, [state.internalError]);
 
-	useEffect(() => {
-		const calcEyePos = (e) => {
-			let eyesPos = {};
-
-			for (let eyeData of [[pinkEye, "pink"], [blueEye, "blue"], [redEye, "red"], [greenEye, "green"]]) {
-				const [eyeRef, color] = eyeData;
-				
-				const eyeDim = eyeRef.current.getBoundingClientRect();
-				const pupilDim = eyeRef.current.querySelector('.pupil').getBoundingClientRect();
-
-				if (!eyeRef.current) continue;
-
-	      const eyeScaleX = (eyeDim.width - pupilDim.width) / 2;
-  	    const eyeScaleY = (eyeDim.height - pupilDim.height) / 2;
-
-				const distanceX = e.clientX - (eyeDim.left + eyeDim.width / 2);
-				const distanceY = e.clientY - (eyeDim.top + eyeDim.height / 2);
-
-				const quadrantWidth = distanceX >= 0? window.innerWidth - (eyeDim.left + eyeDim.width/2) : eyeDim.left + eyeDim.width/2;
-				const quadrantHeight = distanceY >= 0? window.innerHeight - (eyeDim.top + eyeDim.height/2) : eyeDim.top + eyeDim.height/2;
-
-				const ratioX = distanceX / quadrantWidth;
-				const ratioY = distanceY / quadrantHeight;
-
-				const x = ratioX * eyeScaleX;
-				const y = ratioY * eyeScaleY;
-
-				eyesPos[color] = [x, y];
-			}
-			setEyePos(eyesPos);
-		}
-		window.addEventListener('mousemove', calcEyePos);
-		return () => window.removeEventListener('mousemove', calcEyePos);
-	},[])
+	useFollowEyes([[pinkEye, "pink"], [blueEye, "blue"], [redEye, "red"], [greenEye, "green"]], setEyePos);
 	
 	return (
 		<div className="@container/normal w-full h-screen relative">
